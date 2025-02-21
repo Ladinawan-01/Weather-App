@@ -14,7 +14,7 @@ export default function Home() {
   const { data: cityWeather, isLoading: cityLoading, error: cityError } = useWeatherByCity(city);
   const { data: coordsWeather, isLoading: coordsLoading, error: coordsError } = useWeatherByCoords(coords?.lat ?? 0, coords?.lon ?? 0);
 
-  useEffect(() => {
+  useEffect(() => {  
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => setCoords({ lat: position.coords.latitude, lon: position.coords.longitude }),
